@@ -29,8 +29,7 @@ function Navbar({ setSearch, cartCount }) {
       <div className="nav-right">
 
         <div>
-          <p>Hello, {user ? user.split("@")[0] : "Sign in"}</p>
-          <Link to="/login">Account & Lists</Link>
+          <Link to="/login">Hello, {user ? user.split("@")[0] : "Sign in"}</Link>
         </div>
 
         <Link to="/orders">Returns & Orders</Link>

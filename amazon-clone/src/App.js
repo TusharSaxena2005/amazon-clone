@@ -22,6 +22,12 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!localStorage.getItem("user")) {
+      localStorage.setItem("user", "Sneha");
+    }
+  }, []);
+
+  useEffect(() => {
     axios.get(`${API_URL}/products`)
       .then(res => setProducts(res.data))
       .catch(err => console.error("Products API error:", err.response?.data || err.message || err));
