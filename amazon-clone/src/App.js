@@ -23,13 +23,13 @@ function App() {
   useEffect(() => {
     axios.get("http://localhost:5000/products")
       .then(res => setProducts(res.data))
-      .catch(err => console.log(err));
+      .catch(err => console.error("Products API error:", err.response?.data || err.message || err));
   }, []);
 
   const fetchCartCount = () => {
     axios.get("http://localhost:5000/cart")
       .then(res => setCartCount(res.data.length))
-      .catch(err => console.log(err));
+      .catch(err => console.error("Cart API error:", err.response?.data || err.message || err));
   };
 
   useEffect(() => {

@@ -1,0 +1,10 @@
+# Ignore node modules
+backend/node_modules/
+amazon-clone/node_modules/
+
+# Ignore backend env secrets
+backend/.env
+
+# Ignore IDE files
+.vscode/
+*.log
