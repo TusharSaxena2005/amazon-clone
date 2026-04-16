@@ -11,6 +11,7 @@ import Orders from "./Orders";
 import Wishlist from "./Wishlist";
 import Success from "./Success";
 import "./App.css";
+import API_URL from "./api";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -21,13 +22,13 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/products")
+    axios.get(`${API_URL}/products`)
       .then(res => setProducts(res.data))
       .catch(err => console.error("Products API error:", err.response?.data || err.message || err));
   }, []);
 
   const fetchCartCount = () => {
-    axios.get("http://localhost:5000/cart")
+    axios.get(`${API_URL}/cart`)
       .then(res => setCartCount(res.data.length))
       .catch(err => console.error("Cart API error:", err.response?.data || err.message || err));
   };
@@ -37,7 +38,7 @@ function App() {
   }, []);
 
   const addToCart = (id) => {
-    axios.post("http://localhost:5000/cart", {
+    axios.post(`${API_URL}/cart`, {
       product_id: id,
       quantity: 1
     })
@@ -49,7 +50,7 @@ function App() {
   };
 
   const addToWishlist = (id) => {
-    axios.post("http://localhost:5000/wishlist", {
+    axios.post(`${API_URL}/wishlist`, {
       product_id: id
     })
     .then(() => alert("Added to wishlist ❤️"))

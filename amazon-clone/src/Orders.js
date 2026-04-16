@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API_URL from "./api";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/orders")
+    axios.get(`${API_URL}/orders`)
       .then(res => setOrders(res.data))
       .catch(err => console.log(err));
   }, []);

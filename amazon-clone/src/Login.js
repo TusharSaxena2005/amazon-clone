@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_URL from "./api";
 import "./App.css";
 
 function Login() {
@@ -9,7 +10,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    axios.post("http://localhost:5000/login", {
+    axios.post(`${API_URL}/login`, {
       email,
       password
     })

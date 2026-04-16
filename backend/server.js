@@ -4,9 +4,17 @@ const cors = require("cors");
 const app = express();
 
 const db = require("./db");
+const allowedOrigins = [
+  "https://amazon-clone-cgea.vercel.app",
+  "http://localhost:3000",
+];
 app.use(
   cors({
-    origin: "https://amazon-clone-cgea.vercel.app",
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      callback(new Error("CORS origin not allowed"));
+    },
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -20,8 +28,9 @@ app.get("/", (req, res) => {
   res.send("Backend running ");
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 app.get("/products", (req, res) => {
   db.query("SELECT * FROM products", (err, result) => {

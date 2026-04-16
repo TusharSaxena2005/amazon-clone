@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_URL from "./api";
 
 function Cart() {
   const [cart, setCart] = useState([]);
@@ -8,7 +9,7 @@ function Cart() {
 
   // fetch cart
   const fetchCart = () => {
-    axios.get("http://localhost:5000/cart")
+    axios.get(`${API_URL}/cart`)
       .then(res => setCart(res.data))
       .catch(err => console.log(err));
   };
@@ -19,14 +20,14 @@ function Cart() {
 
   // update qty
   const updateQty = (id, qty) => {
-    axios.put(`http://localhost:5000/cart/${id}`, {
+    axios.put(`${API_URL}/cart/${id}`, {
       quantity: qty
     }).then(() => fetchCart());
   };
 
   // delete item
   const deleteItem = (id) => {
-    axios.delete(`http://localhost:5000/cart/${id}`)
+    axios.delete(`${API_URL}/cart/${id}`)
       .then(() => fetchCart());
   };
 

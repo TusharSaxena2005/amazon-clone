@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API_URL from "./api";
 
 function Wishlist() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/wishlist")
+    axios.get(`${API_URL}/wishlist`)
       .then(res => setItems(res.data))
       .catch(err => console.log(err));
   }, []);

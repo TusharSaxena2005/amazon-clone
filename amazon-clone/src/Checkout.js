@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import API_URL from "./api";
 import "./App.css";
 
 function Checkout() {
@@ -18,7 +19,7 @@ function Checkout() {
       return;
     }
 
-    axios.post("http://localhost:5000/order", {
+    axios.post(`${API_URL}/order`, {
       total,
       address,
       payment
