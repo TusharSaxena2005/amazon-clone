@@ -65,31 +65,31 @@ const seedProducts = () => {
       "Wireless Bluetooth Headphones",
       "electronics",
       1999.99,
-      "https://via.placeholder.com/200?text=Headphones"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMXqmcicOGexxWIAg6fxQI3hMt81UBbTk24w&s"
     ],
     [
       "Casual Cotton Shirt",
       "fashion",
       799.0,
-      "https://via.placeholder.com/200?text=Shirt"
+      "https://tiimg.tistatic.com/fp/2/007/743/washable-regular-fit-casual-wear-full-sleeves-spread-collar-plain-cotton-cargo-shirt-for-men--812.jpg"
     ],
     [
       "Modern Desk Lamp",
       "home",
       1299.5,
-      "https://via.placeholder.com/200?text=Lamp"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3zPsUyf3whWMIf8djqIM_Z90m7TlDiwunDw&s"
     ],
     [
       "Smart Watch",
       "electronics",
       3499.0,
-      "https://via.placeholder.com/200?text=Watch"
+      "https://www.leafstudios.in/cdn/shop/files/1_1099cd20-7237-4bdf-a180-b7126de5ef3d_800x.png?v=1722230645"
     ],
     [
       "Running Shoes",
       "fashion",
       2599.0,
-      "https://via.placeholder.com/200?text=Shoes"
+      "https://i5.walmartimages.com/seo/Damyuan-Running-Shoes-Men-Fashion-Sneakers-Slip-on-Casual-Walking-Shoes-Sport-Athletic-Shoes-Lightweight-Breathable-Comfortable_4114141f-7d26-4dd7-933d-babc24080395.516ad145e1a1d8d82a801ac48231950d.jpeg"
     ],
   ];
 
