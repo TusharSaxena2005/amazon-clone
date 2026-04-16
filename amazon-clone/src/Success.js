@@ -13,9 +13,9 @@ function Success() {
 
       <div className="success-card">
 
-        <h1 className="success-icon"></h1>
+        <h1>Order Placed Successfully!</h1>
 
-        <h2>Order Placed Successfully!</h2>
+        <p className="success-icon" aria-hidden="true"></p>
 
         <p>Thank you for shopping with us</p>
 
